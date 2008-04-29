@@ -34,7 +34,7 @@ if gets.chomp! == 'y'
   current_structure << "
     - website"
   puts current_structure
-  puts "What is the name of the project? (example: baldwinbrothers.net, somesite.subfolder, stuff.baldwinbrothers.net)"
+  puts "What is the name of the project? (example: mysite.net, somesite.subfolder, stuff.mystuff.net)"
   domain = gets.chomp!
   `mkdir #{base_path}#{client}/projects/website/#{domain}`
   puts "Website directory added!"
