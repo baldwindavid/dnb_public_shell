@@ -46,11 +46,9 @@ if gets.chomp! == 'y'
   if gets.chomp! == 'y'
     puts "Is this a domain/subdomain or subfolder? ('1' for domain/subdomain or '2' for subfolder)"
     domain_type = gets.chomp!
-    puts "Is this a Rails project? (y or n)"
-    is_rails = gets.chomp!
     
     if domain_type == "1"
-      `ln -s #{base_path}#{client}/projects/website/#{domain}#{'/public' if is_rails == 'y'} ~/Sites/www/#{domain}`
+      `ln -s #{base_path}#{client}/projects/website/#{domain} ~/Sites/www/#{domain}`
       puts "Symlink created!"
       current_structure << "
   Symlink: ~/Sites/www/#{domain}"
@@ -62,7 +60,7 @@ if gets.chomp! == 'y'
         puts "Enter the name that you would like for this symlink?"
         sym_name = gets.chomp!
       end
-      `ln -s #{base_path}#{client}/projects/website/#{domain}#{'/public' if is_rails == 'y'} ~/Sites/www/subfolders/#{sym_name}`
+      `ln -s #{base_path}#{client}/projects/website/#{domain} ~/Sites/www/subfolders/#{sym_name}`
       current_structure << "
   Symlink: ~/Sites/www/subfolders/#{sym_name}"
     end
