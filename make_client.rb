@@ -1,4 +1,4 @@
-base_path = '~/Sites/client/'
+base_path = '~/client/'
 
 puts "Enter main client directory name:"
 client = gets.chomp!
